@@ -1,0 +1,47 @@
+# ====================================
+# Rust Build Artifacts
+# ====================================
+# Matches target directories at any depth (e.g., atm_simulator/target/)
+**/target/
+
+# Generated backup files from rustfmt or cargo fix
+*.rs.bk
+
+# Cargo profile / benchmarking / coverage outputs
+/cobertura.xml
+*.profraw
+*.profdata
+
+# ====================================
+# IDEs & Text Editors
+# ====================================
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains (RustRover, CLion, IntelliJ)
+.idea/
+*.iml
+
+# Vim / Emacs backup files
+*.swp
+*.swo
+*~
+\#*\#
+
+# ====================================
+# Operating System Files
+# ====================================
+.DS_Store
+.DS_Store?
+Thumbs.db
+ehthumbs.db
+
+# ====================================
+# Optional: Cargo.lock
+# ====================================
+# Uncomment the line below if you prefer NOT to track Cargo.lock files across small practice projects.
+# **/Cargo.lock
