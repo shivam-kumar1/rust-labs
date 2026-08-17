@@ -2,9 +2,9 @@ use std::io;
 
 fn main() {
     println!("ATM Simulator");
-    let mut balance: f64 = 0.0;
+    let mut balance: f64 = 100.0;
 
-    loop {
+    balance = loop {
         let mut input = String::new();
         println!("1. Check Balance");
         println!("2. Withdraw");
@@ -16,20 +16,38 @@ fn main() {
 
         match input {
             1 => {
-                todo!()
+                println!("Current balance: {}", balance);
             },
             2 => {
-                todo!()
+                let mut amount = String::new();
+                io::stdin().read_line(&mut amount).expect("Failed to read");
+                let amount: f64 = amount.trim().parse().expect("Not a number");
+                if amount > balance {
+                    println!("Insufficient balance");
+                } else {
+                    balance -= amount;
+                    println!("Withdrawal successful. New balance: {}", balance);
+                }
             },
             3 => {
-                todo!()
+                let mut amount = String::new();
+                io::stdin().read_line(&mut amount).expect("Failed to read");
+                let amount: f64 = amount.trim().parse().expect("Not a number");
+                if amount <= 0.0 {
+                    println!("Invalid amount");
+                } else {
+                        balance += amount;
+                        println!("Deposit successful. New balance: {}", balance);
+                }
             },
             4 => {
-                todo!()
+                break balance;
             },
             _ => {
-                todo!()
+                println!("Invalid choice");
             },
         }
-    }
+    };
+
+    println!("Thank you for using the ATM. Your final balance is: {}", balance);
 }
