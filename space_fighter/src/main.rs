@@ -43,23 +43,19 @@
 
 
 fn apply_damage(health: u8, damage: u8) -> u8 {
-    // TODO: Use saturating_sub
-    todo!()
+    health.saturating_sub(damage)
 }
 
 fn rotate_radar(current_degree: u8, rotation: u8) -> u8 {
-    // TODO: Use wrapping_add
-    todo!()
+    current_degree.wrapping_add(rotation)
 }
 
 fn charge_energy(current: u8, amount: u8) -> (u8, bool) {
-    // TODO: Use overflowing_add
-    todo!()
+    current.overflowing_add(amount)
 }
 
 fn deposit_credits(balance: u8, deposit: u8) -> Option<u8> {
-    // TODO: Use checked_add
-    todo!()
+    balance.checked_add(deposit)
 }
 
 fn main() {
